@@ -12,6 +12,8 @@ def read(path):
             data_dic = {key: value for key, value in iterable}
             data.append(data_dic)
 
-        print(data)
+        
+        return data
+    
 if __name__ == '__main__':
-    read('./data.csv')
+    print(read('./data.csv'))
