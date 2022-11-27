@@ -54,7 +54,7 @@ def filtering(csv, month):
             if months['TO ACCOUNT / TO CATEGORY'] == 'Bills' and months['NOTES'].startswith('Ga'):
                 gas_spend = round(float(months['AMOUNT']), 2)
                 gas += gas_spend
-                dict_month['Power'] = gas
+                dict_month['Gas'] = gas
             if months['TO ACCOUNT / TO CATEGORY'] == 'Bills' and months['NOTES'].startswith('Vi'):
                 visa_spend = round(float(months['AMOUNT']), 2)
                 visa += visa_spend
