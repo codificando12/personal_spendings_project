@@ -27,6 +27,7 @@ def filtering(csv, month):
     rent = 0
     car_ebike_garage = 0
     insurance = 0
+    education = 0
     
     for months in csv:
         if months['DATE'] == month:
@@ -123,13 +124,17 @@ def filtering(csv, month):
                 else:
                     gar_spend = round(float(months['AMOUNT']), 2)
                     car_ebike_garage += gar_spend
-                    dict_month['Garage car/ebike'] = car_ebike_garage           
+                    dict_month['Garage car/ebike'] = car_ebike_garage
+            if months['TO ACCOUNT / TO CATEGORY'] == 'Education ':
+                education_spend = round(float(months['AMOUNT']), 2)
+                education += education_spend
+                dict_month['Education'] = education          
     
     return dict_month 
 
 
 if __name__ == '__main__':
-    reader = read('./data.csv')
+    reader = read('./data202306.csv')
     change_date = change_date_format(reader)
     hola = filtering(change_date, 'Septiembre')
     print(hola)

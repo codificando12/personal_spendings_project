@@ -5,7 +5,7 @@ from excel_generator import create_excel_file
 
 
 def run():
-    spendings = read('./data.csv')
+    spendings = read('./data202306.csv')
     month_format = change_date_format(spendings)
     january = filtering(month_format, 'Enero')
     february = filtering(month_format, 'Febrero')
@@ -21,10 +21,10 @@ def run():
     december = filtering(month_format, 'Diciembre')
     
     months_dicts = [january, february, march, april, may, june,
-        july, august, september, october]
+        july, august, september, october, november, december]
     
     excel_file = create_excel_file(months_dicts) 
-    print(august)
+    print(december)
 
 if __name__ == '__main__':
     run()

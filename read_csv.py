@@ -16,4 +16,4 @@ def read(path):
         return data
     
 if __name__ == '__main__':
-    print(read('./data.csv'))
+    print(read('./data202306.csv'))

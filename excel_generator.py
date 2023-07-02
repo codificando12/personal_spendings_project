@@ -44,6 +44,7 @@ def create_excel_file(months_dicts):
     insurance = ['Car Insurance']
     trips = ['Trips']
     car_ebike_garage = ['Car/ebike garage']
+    education = ['Education']
     
    
 
@@ -116,6 +117,9 @@ def create_excel_file(months_dicts):
         if 'Garage car/ebike' not in value:
             value['Garage car/ebike'] = 0
         car_ebike_garage.append(value['Garage car/ebike'])
+        if 'Education' not in value:
+            value['Education'] = 0
+        education.append(value['Education'])
 
 
     
@@ -142,8 +146,9 @@ def create_excel_file(months_dicts):
     worksheet.append(insurance)
     worksheet.append(trips)
     worksheet.append(car_ebike_garage)
+    worksheet.append(education)
    
-    workbook.save('trying.xlsx')
+    workbook.save('202306.xlsx')
     # print(months_dicts)
     return months_list
 
